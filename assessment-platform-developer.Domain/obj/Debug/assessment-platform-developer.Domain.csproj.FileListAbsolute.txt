@@ -1,0 +1,6 @@
+F:\Projects\Assessment\assessment-platform-developer.Domain\bin\Debug\assessment-platform-developer.Domain.dll
+F:\Projects\Assessment\assessment-platform-developer.Domain\bin\Debug\assessment-platform-developer.Domain.pdb
+F:\Projects\Assessment\assessment-platform-developer.Domain\obj\Debug\assessment-platform-developer.Domain.csproj.AssemblyReference.cache
+F:\Projects\Assessment\assessment-platform-developer.Domain\obj\Debug\assessment-platform-developer.Domain.csproj.CoreCompileInputs.cache
+F:\Projects\Assessment\assessment-platform-developer.Domain\obj\Debug\assessment-platform-developer.Domain.dll
+F:\Projects\Assessment\assessment-platform-developer.Domain\obj\Debug\assessment-platform-developer.Domain.pdb
