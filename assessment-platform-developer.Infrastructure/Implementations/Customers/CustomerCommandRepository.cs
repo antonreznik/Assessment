@@ -15,13 +15,11 @@ namespace assessment_platform_developer.Infrastructure.Implementations.Customers
 
         public async Task<int> AddAsync(Customer customer)
         {
-            return 1;
-
             var createdCustomer = _context.Customers.Add(customer);
 
-            await SaveAsync();
+            _context.SaveChanges();
 
-            return createdCustomer.Entity.ID;
+            return createdCustomer.ID;
         }
 
         public async Task DeleteAsync(int id)
@@ -33,7 +31,7 @@ namespace assessment_platform_developer.Infrastructure.Implementations.Customers
                 _context.Customers.Remove(customer);
             }
 
-            await SaveAsync();
+            _context.SaveChanges();
         }
 
         public async Task UpdateAsync(Customer customer)
@@ -44,18 +42,13 @@ namespace assessment_platform_developer.Infrastructure.Implementations.Customers
             {
                 _context.Entry(customerFromDatabase).CurrentValues.SetValues(customer);
 
-                await SaveAsync();
+                _context.SaveChanges();
             }
         }
 
-        private ValueTask<Customer> GetCustomer(int id)
+        private Task<Customer> GetCustomer(int id)
         {
             return _context.Customers.FindAsync(id);
-        }
-
-        private Task SaveAsync()
-        {
-            return _context.SaveChangesAsync();
         }
     }
 }

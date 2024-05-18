@@ -6,7 +6,7 @@ namespace assessment_platform_developer.Infrastructure.Interfaces.Customers
 {
     public interface ICustomerQueryRepository
     {
-        Task<IEnumerable<Customer>> GetAllAsync();
-        ValueTask<Customer> GetAsync(int id);
+        IEnumerable<Customer> GetAll();
+        Task<Customer> GetAsync(int id);
     }
 }

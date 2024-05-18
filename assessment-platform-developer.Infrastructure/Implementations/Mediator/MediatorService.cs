@@ -13,14 +13,14 @@ namespace assessment_platform_developer.Infrastructure.Implementations.Mediator
             _serviceProvider = serviceProvider;
         }
 
-        public Task<TResult> Send<TResult>(ICommand<TResult> command) where TResult : ICommandResult
+        public Task<TResult> Send<TResult>(IMessage<TResult> command) where TResult : IMessageResult
         {
             if (command == null)
             {
                 throw new ArgumentNullException(nameof(command));
             }
 
-            var commandHandlerType = typeof(ICommandHandler<,>).MakeGenericType(command.GetType(), typeof(TResult));
+            var commandHandlerType = typeof(IMessageHandler<,>).MakeGenericType(command.GetType(), typeof(TResult));
 
             dynamic handler = _serviceProvider.GetService(commandHandlerType);
 

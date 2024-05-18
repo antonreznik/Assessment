@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assessment_platform_developer.Application.Customers.Commands.Add
 {
-    public class AddCustomerCommandHandler : ICommandHandler<AddCustomerCommand, AddCustomerCommandResult>
+    public class AddCustomerCommandHandler : IMessageHandler<AddCustomerCommand, AddCustomerCommandResult>
     {
         private readonly ICustomerCommandRepository _repository;
 

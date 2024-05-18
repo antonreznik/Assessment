@@ -10,8 +10,7 @@ using Container = SimpleInjector.Container;
 using assessment_platform_developer.Infrastructure.Interfaces.Mediator;
 using assessment_platform_developer.Application.Customers.Dto;
 using assessment_platform_developer.Application.Customers.incomingDtos.Add;
-using assessment_platform_developer.Models.ViewModels;
-using System.Threading.Tasks;
+using assessment_platform_developer.Application.Customers.Queries.GetAll;
 
 namespace assessment_platform_developer
 {
@@ -23,22 +22,14 @@ namespace assessment_platform_developer
 		{
 			if (!IsPostBack)
 			{
-				var testContainer = (Container)HttpContext.Current.Application["DIContainer"];
-			
-                var customerService = testContainer.GetInstance<ICustomerService>();
+                PopulateCustomerListBox();
 
-				//var allCustomers = customerService.GetAllCustomers();
-				//ViewState["Customers"] = allCustomers;
-
-                ViewState["Customers"] = new List<CustomerViewModel>();
+                PopulateCustomerDropDownLists();
             }
 			else
 			{
-				customers = (List<CustomerViewModel>)ViewState["Customers"];
+                customers = (List<CustomerViewModel>)ViewState["Customers"];
 			}
-
-			PopulateCustomerListBox();
-			PopulateCustomerDropDownLists();
 		}
 
 		private void PopulateCustomerDropDownLists()
@@ -70,18 +61,44 @@ namespace assessment_platform_developer
 			StateDropDownList.Items.AddRange(provinceList);
 		}
 
-		protected void PopulateCustomerListBox()
+        private void CleanForm()
+        {
+            CustomerName.Text = string.Empty;
+            CustomerAddress.Text = string.Empty;
+            CustomerEmail.Text = string.Empty;
+            CustomerPhone.Text = string.Empty;
+            CustomerCity.Text = string.Empty;
+            StateDropDownList.SelectedIndex = 0;
+            CustomerZip.Text = string.Empty;
+            CountryDropDownList.SelectedIndex = 0;
+            CustomerNotes.Text = string.Empty;
+            ContactName.Text = string.Empty;
+            ContactPhone.Text = string.Empty;
+            ContactEmail.Text = string.Empty;
+        }
+
+        protected void PopulateCustomerListBox()
 		{
-			CustomersDDL.Items.Clear();
-			var storedCustomers = customers.Select(c => new ListItem(c.Name)).ToArray();
+            var testContainer = (Container)HttpContext.Current.Application["DIContainer"];
+
+            var mediator = testContainer.GetInstance<IMediator>();
+
+            var result = mediator.Send(new GetAllCustomersQuery()).Result;
+
+            ViewState["Customers"] = result.Customers;
+
+            CustomersDDL.Items.Clear();
+
+            CustomersDDL.Items.Add(new ListItem("Add new customer"));
+
+            var storedCustomers = result.Customers.Select(c => new ListItem(c.Name, c.ID.ToString())).ToArray();
+			
 			if (storedCustomers.Length != 0)
 			{
 				CustomersDDL.Items.AddRange(storedCustomers);
 				CustomersDDL.SelectedIndex = 0;
 				return;
 			}
-
-			CustomersDDL.Items.Add(new ListItem("Add new customer"));
 		}
 
 		protected void AddButton_Click(object sender, EventArgs e)
@@ -109,18 +126,32 @@ namespace assessment_platform_developer
 
 			CustomersDDL.Items.Add(new ListItem(customer.Name));
 
-			CustomerName.Text = string.Empty;
-			CustomerAddress.Text = string.Empty;
-			CustomerEmail.Text = string.Empty;
-			CustomerPhone.Text = string.Empty;
-			CustomerCity.Text = string.Empty;
-			StateDropDownList.SelectedIndex = 0;
-			CustomerZip.Text = string.Empty;
-			CountryDropDownList.SelectedIndex = 0;
-			CustomerNotes.Text = string.Empty;
-			ContactName.Text = string.Empty;
-			ContactPhone.Text = string.Empty;
-			ContactEmail.Text = string.Empty;
-		}
-	}
+            CleanForm();
+        }
+
+		protected void DropDownList_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (int.TryParse(CustomersDDL.SelectedValue, out int selectedId))
+			{
+                var selectedCustomer = customers.FirstOrDefault(x => x.ID == selectedId);
+
+                CustomerName.Text = selectedCustomer.Name;
+                CustomerAddress.Text = selectedCustomer.Address;
+                CustomerEmail.Text = selectedCustomer.Email;
+                CustomerPhone.Text = selectedCustomer.Phone;
+                CustomerCity.Text = selectedCustomer.City;
+                StateDropDownList.SelectedIndex = int.Parse(selectedCustomer.State);
+                CustomerZip.Text = selectedCustomer.Zip;
+                CountryDropDownList.SelectedIndex = int.Parse(selectedCustomer.Country);
+                CustomerNotes.Text = selectedCustomer.Notes;
+                ContactName.Text = selectedCustomer.ContactName;
+                ContactPhone.Text = selectedCustomer.ContactPhone;
+                ContactEmail.Text = selectedCustomer.Email;
+            }
+			else
+			{
+				CleanForm();
+            }
+        }
+    }
 }

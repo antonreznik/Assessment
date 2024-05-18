@@ -2,7 +2,7 @@
 
 namespace assessment_platform_developer.Application.Customers.Commands.Add
 {
-    public class AddCustomerCommandResult : ICommandResult
+    public class AddCustomerCommandResult : IMessageResult
     {
         public int CustomerId { get; private set; }
 

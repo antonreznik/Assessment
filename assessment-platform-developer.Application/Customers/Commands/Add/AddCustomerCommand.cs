@@ -4,7 +4,7 @@ using assessment_platform_developer.Infrastructure.Interfaces.Mediator;
 
 namespace assessment_platform_developer.Application.Customers.incomingDtos.Add
 {
-    public class AddCustomerCommand : ICommand<AddCustomerCommandResult>
+    public class AddCustomerCommand : IMessage<AddCustomerCommandResult>
     {
         public int ID { get; set; }
         public string Name { get; set; }

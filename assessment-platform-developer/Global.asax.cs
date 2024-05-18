@@ -84,8 +84,8 @@ namespace assessment_platform_developer
 			container.Register<IMediator>(() => new MediatorService(container));
 			container.Register<ICustomerCommandRepository, CustomerCommandRepository>(Lifestyle.Scoped);
 			container.Register<ICustomerQueryRepository, CustomerQueryRepository>(Lifestyle.Scoped);
-            container.Register(typeof(ICommandHandler<,>), new[] { 
-				typeof(ICommandHandler<,>).Assembly,
+            container.Register(typeof(IMessageHandler<,>), new[] { 
+				typeof(IMessageHandler<,>).Assembly,
                 Assembly.Load("assessment-platform-developer.Application")
         });
 

@@ -4,8 +4,6 @@ F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\as
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\assessment-platform-developer.Domain.dll
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.Bcl.HashCode.dll
-F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
-F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.EntityFrameworkCore.dll
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -28,8 +26,6 @@ F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Sy
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\assessment-platform-developer.Domain.pdb
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.Bcl.HashCode.xml
-F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.EntityFrameworkCore.xml
-F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\Microsoft.Extensions.Configuration.xml
@@ -53,3 +49,9 @@ F:\Projects\Assessment\assessment-platform-developer.Infrastructure\obj\Debug\as
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\obj\Debug\assessme.830C41CB.Up2Date
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\obj\Debug\assessment-platform-developer.Infrastructure.dll
 F:\Projects\Assessment\assessment-platform-developer.Infrastructure\obj\Debug\assessment-platform-developer.Infrastructure.pdb
+F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\EntityFramework.dll
+F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\EntityFramework.xml
+F:\Projects\Assessment\assessment-platform-developer.Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+F:\Projects\Assessment\assessment-platform-developer.Infrastructure\obj\Debug\assessment_platform_developer.Infrastructure.Migrations.init.resources
+F:\Projects\Assessment\assessment-platform-developer.Infrastructure\obj\Debug\assessment-platform-developer.Infrastructure.csproj.GenerateResource.cache

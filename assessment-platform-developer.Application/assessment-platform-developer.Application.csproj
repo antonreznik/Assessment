@@ -44,13 +44,16 @@
     <Compile Include="Customers\Commands\Add\AddCustomerCommand.cs" />
     <Compile Include="Customers\Commands\Add\AddCustomerCommandHandler.cs" />
     <Compile Include="Customers\Commands\Add\AddCustomerCommandResult.cs" />
+    <Compile Include="Customers\Dto\CustomerViewModel.cs" />
     <Compile Include="Customers\Dto\IncomingCustomerDto.cs" />
+    <Compile Include="Customers\Queries\GetAll\GetAllCustomersQuery.cs" />
+    <Compile Include="Customers\Queries\GetAll\GetAllCustomersQueryHandler.cs" />
+    <Compile Include="Customers\Queries\GetAll\GetAllCustomersQueryResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Customers\Commands\Delete\" />
     <Folder Include="Customers\Commands\Update\" />
-    <Folder Include="Customers\Queries\GetAll\" />
     <Folder Include="Customers\Queries\Get\" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +65,9 @@
       <Project>{09400BC0-A3E9-48F1-BAB0-78C8789041A7}</Project>
       <Name>assessment-platform-developer.Infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
