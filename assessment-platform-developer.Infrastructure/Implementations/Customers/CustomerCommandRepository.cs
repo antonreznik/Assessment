@@ -13,7 +13,7 @@ namespace assessment_platform_developer.Infrastructure.Implementations.Customers
             _context = new CustomerDbContext();
         }
 
-        public async Task<int> AddAsync(Customer customer)
+        public int Add(Customer customer)
         {
             var createdCustomer = _context.Customers.Add(customer);
 
@@ -22,9 +22,9 @@ namespace assessment_platform_developer.Infrastructure.Implementations.Customers
             return createdCustomer.ID;
         }
 
-        public async Task DeleteAsync(int id)
+        public void Delete(int id)
         {
-            var customer = await GetCustomer(id);
+            var customer = GetCustomer(id);
 
             if(customer != null)
             {
@@ -34,9 +34,9 @@ namespace assessment_platform_developer.Infrastructure.Implementations.Customers
             _context.SaveChanges();
         }
 
-        public async Task UpdateAsync(Customer customer)
+        public void Update(Customer customer)
         {
-            var customerFromDatabase = await GetCustomer(customer.ID);
+            var customerFromDatabase = GetCustomer(customer.ID);
 
             if(customerFromDatabase != null)
             {
@@ -46,9 +46,9 @@ namespace assessment_platform_developer.Infrastructure.Implementations.Customers
             }
         }
 
-        private Task<Customer> GetCustomer(int id)
+        private Customer GetCustomer(int id)
         {
-            return _context.Customers.FindAsync(id);
+            return _context.Customers.Find(id);
         }
     }
 }

@@ -9,12 +9,9 @@ using SimpleInjector.Diagnostics;
 using System.Web.Compilation;
 using System.Web.UI;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-using assessment_platform_developer.Services;
 using SimpleInjector.Integration.Web;
 using assessment_platform_developer.Infrastructure.Interfaces.Mediator;
 using assessment_platform_developer.Infrastructure.Implementations.Mediator;
-using assessment_platform_developer.Repositories;
-using assessment_platform_developer.Application.Customers.Commands.Add;
 using assessment_platform_developer.Infrastructure.Interfaces.Customers;
 using assessment_platform_developer.Infrastructure.Implementations.Customers;
 
@@ -79,8 +76,6 @@ namespace assessment_platform_developer
 			container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
 
 			// 2. Configure the container (register)
-            container.Register<ICustomerRepository, CustomerRepository>(Lifestyle.Singleton);
-            container.Register<ICustomerService, CustomerService>(Lifestyle.Scoped);
 			container.Register<IMediator>(() => new MediatorService(container));
 			container.Register<ICustomerCommandRepository, CustomerCommandRepository>(Lifestyle.Scoped);
 			container.Register<ICustomerQueryRepository, CustomerQueryRepository>(Lifestyle.Scoped);

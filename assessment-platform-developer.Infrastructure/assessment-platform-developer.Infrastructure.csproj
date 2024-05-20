@@ -122,7 +122,7 @@
     <Compile Include="Interfaces\Customers\ICustomerCommandRepository.cs" />
     <Compile Include="Interfaces\Customers\ICustomerQueryRepository.cs" />
     <Compile Include="Interfaces\Mediator\IMessage.cs" />
-    <Compile Include="Interfaces\Mediator\ICommandHandler.cs" />
+    <Compile Include="Interfaces\Mediator\IMessageHandler.cs" />
     <Compile Include="Interfaces\Mediator\IMessageResult.cs" />
     <Compile Include="Interfaces\Mediator\IMediator.cs" />
     <Compile Include="Migrations\202405180559165_init.cs" />

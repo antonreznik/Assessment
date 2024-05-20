@@ -20,9 +20,9 @@ namespace assessment_platform_developer.Infrastructure.Implementations.Customers
             return _context.Customers.ToList().AsEnumerable();
         } 
 
-        public Task<Customer> GetAsync(int id)
+        public Customer Get(int id)
         {
-            return _context.Customers.FindAsync(id);
+            return _context.Customers.Find(id);
         }
     }
 }

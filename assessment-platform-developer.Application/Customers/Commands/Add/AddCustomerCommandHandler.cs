@@ -2,7 +2,6 @@
 using assessment_platform_developer.Domain.Customers;
 using assessment_platform_developer.Infrastructure.Interfaces.Customers;
 using assessment_platform_developer.Infrastructure.Interfaces.Mediator;
-using System.Threading.Tasks;
 
 namespace assessment_platform_developer.Application.Customers.Commands.Add
 {
@@ -15,9 +14,9 @@ namespace assessment_platform_developer.Application.Customers.Commands.Add
             _repository = repository;
         }
 
-        public async Task<AddCustomerCommandResult> Handle(AddCustomerCommand command)
+        public AddCustomerCommandResult Handle(AddCustomerCommand command)
         {
-            var customerId = await _repository.AddAsync(new Customer()
+            var customerId = _repository.Add(new Customer()
             {
                 Name = command.Name,
                 Address = command.Address,

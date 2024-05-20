@@ -44,18 +44,23 @@
     <Compile Include="Customers\Commands\Add\AddCustomerCommand.cs" />
     <Compile Include="Customers\Commands\Add\AddCustomerCommandHandler.cs" />
     <Compile Include="Customers\Commands\Add\AddCustomerCommandResult.cs" />
+    <Compile Include="Customers\Commands\Delete\DeleteCustomerCommandHandler.cs" />
+    <Compile Include="Customers\Commands\Delete\DeleteCustomerCommandResult.cs" />
+    <Compile Include="Customers\Commands\Update\UpdateCustomerCommand.cs" />
+    <Compile Include="Customers\Commands\Delete\DeleteCustomerCommand.cs" />
+    <Compile Include="Customers\Commands\Update\UpdateCustomerCommandHandler.cs" />
+    <Compile Include="Customers\Commands\Update\UpdateCustomerCommandResult.cs" />
     <Compile Include="Customers\Dto\CustomerViewModel.cs" />
     <Compile Include="Customers\Dto\IncomingCustomerDto.cs" />
     <Compile Include="Customers\Queries\GetAll\GetAllCustomersQuery.cs" />
     <Compile Include="Customers\Queries\GetAll\GetAllCustomersQueryHandler.cs" />
     <Compile Include="Customers\Queries\GetAll\GetAllCustomersQueryResult.cs" />
+    <Compile Include="Customers\Queries\Get\GetCustomerQuery.cs" />
+    <Compile Include="Customers\Queries\Get\GetCustomerQueryHandler.cs" />
+    <Compile Include="Customers\Queries\Get\GetCustomerQueryResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Customers\Commands\Delete\" />
-    <Folder Include="Customers\Commands\Update\" />
-    <Folder Include="Customers\Queries\Get\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\assessment-platform-developer.Domain\assessment-platform-developer.Domain.csproj">
       <Project>{21A265BB-766E-41B3-B515-62DFC14E7817}</Project>

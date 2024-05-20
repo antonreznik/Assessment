@@ -1,6 +1,5 @@
 ﻿using assessment_platform_developer.Infrastructure.Interfaces.Customers;
 using assessment_platform_developer.Infrastructure.Interfaces.Mediator;
-using System.Threading.Tasks;
 
 namespace assessment_platform_developer.Application.Customers.Queries.GetAll
 {
@@ -13,11 +12,11 @@ namespace assessment_platform_developer.Application.Customers.Queries.GetAll
             _repository = repository;
         }
 
-        public Task<GetAllCustomersQueryResult> Handle(GetAllCustomersQuery data)
+        public GetAllCustomersQueryResult Handle(GetAllCustomersQuery data)
         {
             var result = _repository.GetAll();
 
-            return Task.FromResult(new GetAllCustomersQueryResult(result));
+            return new GetAllCustomersQueryResult(result);
         }
     }
 }

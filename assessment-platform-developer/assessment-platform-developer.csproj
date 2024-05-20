@@ -215,10 +215,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Customer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\CustomersRepository.cs" />
-    <Compile Include="Services\CustomersService.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -229,7 +226,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -246,6 +242,10 @@
     <ProjectReference Include="..\assessment-platform-developer.Application\assessment-platform-developer.Application.csproj">
       <Project>{46072e8d-ea31-4e75-804b-5fcd2c62bd02}</Project>
       <Name>assessment-platform-developer.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\assessment-platform-developer.Domain\assessment-platform-developer.Domain.csproj">
+      <Project>{21A265BB-766E-41B3-B515-62DFC14E7817}</Project>
+      <Name>assessment-platform-developer.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\assessment-platform-developer.Infrastructure\assessment-platform-developer.Infrastructure.csproj">
       <Project>{09400BC0-A3E9-48F1-BAB0-78C8789041A7}</Project>
